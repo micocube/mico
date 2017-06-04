@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8"/>
+    <title>Chnage mode - Editor.md examples</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="../css/editormd.css"/>
+    <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon"/>
+    <style>
+        #codes textarea {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="layout">
+    <div id="editormd">
+        <textarea style="display:none;">
+            $(function() {
+            var testEditor = editormd("test-editormd", {
+                width            : "90%",
+                height           : 720,
+                watch            : false,
+                toolbar          : false,
+                codeFold         : true,
+                searchReplace    : true,
+                placeholder      : "Enjoy coding!",
+                value            : (localStorage.mode) ? $("#"+localStorage.mode.replace("text/", "")+"-code").val() : $("#html-code").val(),
+                theme            : (localStorage.theme) ? localStorage.theme : "default",
+                mode             : (localStorage.mode) ? localStorage.mode : "text/html",
+                path             : '../lib/'
+            });
+        });
+        </textarea>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="../editormd.js"></script>
+<script type="text/javascript">
+    var testEditor;
+
+    $(function () {
+        testEditor = editormd("editormd", {
+            width: "90%",
+            height: 720,
+            watch: false,
+            toolbar: false,
+            codeFold: true,
+            searchReplace: true,
+            placeholder: "Enjoy coding!",
+            theme: (localStorage.theme) ? localStorage.theme : "default",
+            mode: (localStorage.mode) ? localStorage.mode : "text/x-java",
+            path: '../lib/'
+        });
+    });
+</script>
+</body>
+</html>
